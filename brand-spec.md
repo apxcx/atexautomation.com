@@ -37,7 +37,7 @@ Contact: https://sites.google.com/view/atexautomation/contact-us
 
 ## Authentic local assets
 
-All assets are saved under `public/atex-brand/` and were sourced from ATEX's official current domain.
+All official brand and product assets are saved under `public/atex-brand/` and were sourced from ATEX's official current domain. The hero motion asset is generated for this redesign and carries no ATEX logo or product-specific claim.
 
 - `atex-logo.png` — official transparent logo, 1758 × 408 px, from `https://atexautomation.com/wp-content/uploads/sites/27/2024/03/atexautomation-logo.png`. Use the supplied file via `<img>` in the header and footer. Preserve its original gray wordmark and cyan subline.
 - `atex-site-photo.jpg` — 1536 × 1024 px power-plant image shown on ATEX's official homepage. It has no identified project/client name, so its alt/caption describes the scene only.
@@ -45,6 +45,7 @@ All assets are saved under `public/atex-brand/` and were sourced from ATEX's off
 - `atex-final-control-elements.png` — 640 × 480 px official final-control products collage from ATEX's service page.
 - `atex-simatic-panels.png` — 234 × 234 px operator-panel product image used on ATEX's official website. Retain neutral description; do not add claims about manufacturer endorsement.
 - `atex-control-cabinets.jpg` — 320 × 290 px control cabinet/electrical equipment image from official ATEX service-page media.
+- `industrial-hero.mp4` — generated 1280 × 720 px, 8-second muted industrial operations montage used as the hero background. `atex-site-photo.jpg` remains the static poster/fallback.
 - `official-home-banner.png` and `atex-wordmark.png` — duplicate logo renditions retained from initial asset retrieval; `atex-logo.png` is the canonical direct-source logo.
 
 The page uses the real logo and images in the HTML. Do not recreate the wordmark in CSS or present any product image as a named customer installation.

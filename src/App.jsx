@@ -451,11 +451,19 @@ export default function App() {
       <Header />
       <main id="main-content">
         <section className="hero-section" aria-labelledby="hero-title">
+          <figure className="hero-media" aria-label="Industrial automation, precision instrumentation, and refinery operations">
+            <video autoPlay muted loop playsInline poster="/atex-brand/atex-site-photo.jpg" aria-hidden="true">
+              <source src="/atex-brand/industrial-hero.mp4" type="video/mp4" />
+              <img src="/atex-brand/atex-site-photo.jpg" alt="Power plant featured on the official ATEX Automation website" />
+            </video>
+            <div className="hero-media-overlay" aria-hidden="true" />
+            <figcaption><span>Industrial instrumentation · Automation · Fire detection</span><span>ATEX · PH</span></figcaption>
+          </figure>
           <div className="hero-copy">
             <p className="eyebrow">Industrial instrumentation · Automation · Fire detection</p>
-            <h1 id="hero-title">ATEX is proud to help power plants achieve their goals.</h1>
+            <h1 id="hero-title">Precision engineered for operations that cannot stop.</h1>
             <p className="hero-description">
-              ATEX is proud to help power plants from Luzon, Visayas and Mindanao achieve their goals and objectives through quality products and services.
+              ATEX helps power plants and industrial teams across the Philippines move with confidence—from instrumentation and automation to fire detection and alarm systems.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="https://sites.google.com/view/atexautomation/inquiry-form" target="_blank" rel="noreferrer">
@@ -465,10 +473,6 @@ export default function App() {
             </div>
             <p className="hero-footnote">ATEX AUTOMATION AND TECHNOLOGIES CORP. <span>PHILIPPINES</span></p>
           </div>
-          <figure className="hero-image">
-            <img src="/atex-brand/atex-site-photo.jpg" alt="Power plant featured on the official ATEX Automation website" />
-            <figcaption><span>Industrial instrumentation & process automation</span><span>ATEX · PH</span></figcaption>
-          </figure>
           <div className="hero-side-note" aria-hidden="true">ENGINEERED FOR OPERATIONS</div>
         </section>
 
