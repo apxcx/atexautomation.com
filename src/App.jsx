@@ -32,31 +32,37 @@ const serviceAreas = [
   {
     number: '01',
     name: 'Measuring instruments',
+    icon: 'measure',
     detail: 'Thermocouple and RTD temperature sensors; temperature, pressure, level and flow transmitters; analytical instrumentation.',
   },
   {
     number: '02',
     name: 'Receiving instruments',
+    icon: 'panel',
     detail: 'Digital controllers, indicators and recorders; programmable logic controllers, distributed control systems, drives and HMIs.',
   },
   {
     number: '03',
     name: 'Final control elements',
+    icon: 'valve',
     detail: 'Control valves, valve actuators and positioners, motors and pneumatic cylinders.',
   },
   {
     number: '04',
     name: 'Building automation and control',
+    icon: 'building',
     detail: 'CCTV, access control, HVAC, fire detection and alarm, toxic gas detection, and energy monitoring and control.',
   },
   {
     number: '05',
     name: 'Fabrication and assembly',
+    icon: 'cabinet',
     detail: 'Electrical panels and control panels, including repair and service.',
   },
   {
     number: '06',
     name: 'Engineering and integration',
+    icon: 'integration',
     detail: 'Design, installation, configuration and programming, start-up, testing and commissioning.',
   },
 ];
@@ -64,14 +70,17 @@ const serviceAreas = [
 const servicePrinciples = [
   {
     name: 'ATTEND',
+    icon: 'attend',
     copy: 'We carefully assess our customers’ requirements and deliver optimal solutions with confidence, supported by extensive product knowledge and proven industry experience.',
   },
   {
     name: 'ACCUMULATE',
+    icon: 'accumulate',
     copy: 'We strive to provide leading-edge solutions that set the standard for reliability and performance, complemented by exceptional after-sales service you can depend on.',
   },
   {
     name: 'ADVANTAGE',
+    icon: 'advantage',
     copy: 'Our solutions are designed to improve efficiency, reduce costs, and enhance overall quality, delivering real value for industrial companies.',
   },
 ];
@@ -97,16 +106,19 @@ const serviceCases = [
 const recognitions = [
   {
     index: '01',
+    icon: 'award',
     label: 'Plaque of appreciation',
     detail: 'For being one of the Top 5 Supplier of Aboitiz Power Corporation.',
   },
   {
     index: '02',
+    icon: 'supply',
     label: 'Kiosk sponsorship',
     detail: 'For being one of the Top 5 Suppliers of Aboitiz Power Corporation.',
   },
   {
     index: '03',
+    icon: 'forum',
     label: 'Cocktail sponsorship',
     detail: '10th Philippine Coal Plant User Group Technical Forum.',
   },
@@ -132,6 +144,27 @@ const offices = [
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
+}
+
+function FeatureIcon({ type }) {
+  const paths = {
+    measure: <><circle cx="12" cy="12" r="7" /><path d="M12 8v4l2.8 1.8" /><path d="M5 4.8 3.8 3.6M19 4.8l1.2-1.2" /></>,
+    panel: <><rect x="4" y="3.5" width="16" height="17" rx="1.5" /><path d="M7.5 7.5h9M7.5 11.5h9M7.5 15.5h4" /><circle cx="16.5" cy="16" r="1" /></>,
+    valve: <><path d="M4 12h4M16 12h4M8 8l8 8M16 8l-8 8" /><circle cx="12" cy="12" r="2.5" /></>,
+    building: <><path d="M5 20V8l7-4 7 4v12M3 20h18M8 10h2M14 10h2M8 14h2M14 14h2M10 20v-3h4v3" /></>,
+    cabinet: <><rect x="5" y="3" width="14" height="18" rx="1" /><path d="M8 7h8M8 11h8M8 15h5M16.5 15h.01" /></>,
+    integration: <><circle cx="7" cy="12" r="3" /><circle cx="17" cy="7" r="3" /><circle cx="17" cy="17" r="3" /><path d="m9.5 10.5 5-2M9.5 13.5l5 2" /></>,
+    attend: <><path d="M12 20s7-3.4 7-9V5l-7-2-7 2v6c0 5.6 7 9 7 9Z" /><path d="m8.5 11.5 2.2 2.2 4.8-5" /></>,
+    accumulate: <><path d="M4 18h16M6 14h12M8 10h8M10 6h4" /></>,
+    advantage: <><path d="M4 19 10 13l3 3 7-8" /><path d="M15 8h5v5" /></>,
+    shield: <><path d="M12 21s7-3.4 7-9V5l-7-2-7 2v7c0 5.6 7 9 7 9Z" /><path d="m8.5 11.5 2.2 2.2 4.8-5" /></>,
+    award: <><circle cx="12" cy="9" r="5" /><path d="m9 13-1 7 4-2 4 2-1-7" /></>,
+    supply: <><path d="M4 8h16v11H4zM7 8V5h10v3M8 12h8M8 15h5" /></>,
+    forum: <><path d="M5 6h14v10H9l-4 3V6Z" /><path d="M8 10h8M8 13h5" /></>,
+    location: <><path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z" /><circle cx="12" cy="10" r="2.2" /></>,
+  };
+
+  return <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[type] || paths.measure}</svg>;
 }
 
 function Header() {
@@ -255,15 +288,27 @@ function ServicesSection() {
           <p className="section-intro">Cost-effective solutions for instrumentation and control needs, supported from installation through service.</p>
         </div>
       </div>
+      <div className="services-feature">
+        <div className="services-feature-image">
+          <img src="/atex-brand/atex-site-photo.jpg" alt="Power plant operations supported by ATEX instrumentation and automation" />
+          <span className="image-stamp">FIELD READY / PH</span>
+        </div>
+        <div className="services-feature-copy">
+          <p className="eyebrow">Built for the field</p>
+          <h3>From the first signal to the final test.</h3>
+          <p>One connected team for the moments where accuracy, uptime, and safety matter most.</p>
+          <div className="services-feature-metrics"><span>01 <strong>Assess</strong></span><span>02 <strong>Install</strong></span><span>03 <strong>Commission</strong></span></div>
+        </div>
+      </div>
       <div className="service-verb-row" aria-label="Core services">
         {['Maintenance', 'Repair', 'Installation', 'Commissioning'].map((name, index) => (
-          <div className="service-verb" key={name}><span>0{index + 1}</span><strong>{name}</strong></div>
+          <div className="service-verb" key={name}><span>0{index + 1}</span><FeatureIcon type={['measure', 'cabinet', 'integration', 'advantage'][index]} /><strong>{name}</strong></div>
         ))}
       </div>
       <div className="service-grid">
         {serviceAreas.map((service) => (
           <article className="service-card" key={service.number}>
-            <span className="service-card-index">{service.number}</span>
+            <div className="service-card-top"><span className="service-card-index">{service.number}</span><span className="icon-badge"><FeatureIcon type={service.icon} /></span></div>
             <h3>{service.name}</h3>
             <p>{service.detail}</p>
           </article>
@@ -279,7 +324,7 @@ function ServicesSection() {
       <div className="casework-grid">
         {serviceCases.map((item, index) => (
           <article className="casework-card" key={item.title}>
-            <span className="casework-index">0{index + 1} / SERVICE</span>
+            <div className="casework-card-top"><span className="casework-index">0{index + 1} / SERVICE</span><span className="casework-icon"><FeatureIcon type={['measure', 'building', 'shield'][index] || 'measure'} /></span></div>
             <p className="casework-label">{item.label}</p>
             <h4>{item.title}</h4>
             <p className="casework-copy">{item.copy}</p>
@@ -322,7 +367,7 @@ function AboutSection() {
       </div>
       <div className="mission-vision section-wrap">
         <article className="mission-card">
-          <p className="eyebrow">Our mission</p>
+          <div className="card-kicker"><p className="eyebrow">Our mission</p><span className="card-kicker-icon"><FeatureIcon type="attend" /></span></div>
           <h3>Precision engineered solutions for operational efficiency and safety.</h3>
           <ul>
             <li>Build long-term partnerships through service, innovation, and integrity.</li>
@@ -331,7 +376,7 @@ function AboutSection() {
           </ul>
         </article>
         <article className="vision-card">
-          <p className="eyebrow eyebrow-light">Our vision</p>
+          <div className="card-kicker"><p className="eyebrow eyebrow-light">Our vision</p><span className="card-kicker-icon"><FeatureIcon type="advantage" /></span></div>
           <h3>To be the most trusted and innovative partner in industrial automation, instrumentation, and fire safety.</h3>
           <p>Empowering businesses to operate with excellence, safety, and sustainability.</p>
         </article>
@@ -353,7 +398,7 @@ function AtexWay() {
       <div className="way-grid">
         {servicePrinciples.map((item, index) => (
           <article className="way-card" key={item.name}>
-            <span className="way-index">0{index + 1}</span>
+            <div className="way-card-top"><span className="way-index">0{index + 1}</span><span className="way-icon"><FeatureIcon type={item.icon} /></span></div>
             <h3>{item.name}</h3>
             <p>{item.copy}</p>
           </article>
@@ -377,7 +422,7 @@ function RecognitionSection() {
         <div className="recognition-grid">
           {recognitions.map((item) => (
             <article className="recognition-card" key={item.index}>
-              <span>{item.index}</span>
+              <div className="recognition-card-top"><span>{item.index}</span><span className="recognition-icon"><FeatureIcon type={item.icon} /></span></div>
               <h3>{item.label}</h3>
               <p>{item.detail}</p>
             </article>
@@ -411,7 +456,7 @@ function ContactSection() {
         <div className="office-grid">
           {offices.map((office, index) => (
             <article className="office-card" key={office.city}>
-              <span className="office-index">0{index + 1} / {office.city.toUpperCase()}</span>
+              <div className="office-card-top"><span className="office-index">0{index + 1} / {office.city.toUpperCase()}</span><span className="office-icon"><FeatureIcon type="location" /></span></div>
               <h3>{office.place}</h3>
               <p>{office.address}</p>
             </article>
