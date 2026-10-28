@@ -71,16 +71,22 @@ const servicePrinciples = [
   {
     name: 'ATTEND',
     icon: 'attend',
+    image: '/atex-brand/atex-measuring-instruments.png',
+    alt: 'Industrial measurement and automation systems shown in official ATEX imagery',
     copy: 'We carefully assess our customers’ requirements and deliver optimal solutions with confidence, supported by extensive product knowledge and proven industry experience.',
   },
   {
     name: 'ACCUMULATE',
     icon: 'accumulate',
+    image: '/atex-brand/atex-final-control-elements.png',
+    alt: 'Industrial control valves and actuators shown in official ATEX imagery',
     copy: 'We strive to provide leading-edge solutions that set the standard for reliability and performance, complemented by exceptional after-sales service you can depend on.',
   },
   {
     name: 'ADVANTAGE',
     icon: 'advantage',
+    image: '/atex-brand/atex-simatic-panels.png',
+    alt: 'Industrial operator panels shown in official ATEX imagery',
     copy: 'Our solutions are designed to improve efficiency, reduce costs, and enhance overall quality, delivering real value for industrial companies.',
   },
 ];
@@ -107,18 +113,24 @@ const recognitions = [
   {
     index: '01',
     icon: 'award',
+    image: '/atex-brand/atex-site-photo.jpg',
+    alt: 'Power plant operations represented in official ATEX website imagery',
     label: 'Plaque of appreciation',
     detail: 'For being one of the Top 5 Supplier of Aboitiz Power Corporation.',
   },
   {
     index: '02',
     icon: 'supply',
+    image: '/atex-brand/atex-control-cabinets.jpg',
+    alt: 'Industrial control cabinet equipment shown in official ATEX imagery',
     label: 'Kiosk sponsorship',
     detail: 'For being one of the Top 5 Suppliers of Aboitiz Power Corporation.',
   },
   {
     index: '03',
     icon: 'forum',
+    image: '/atex-brand/atex-final-control-elements.png',
+    alt: 'Industrial final control equipment shown in official ATEX imagery',
     label: 'Cocktail sponsorship',
     detail: '10th Philippine Coal Plant User Group Technical Forum.',
   },
@@ -398,9 +410,12 @@ function AtexWay() {
       <div className="way-grid">
         {servicePrinciples.map((item, index) => (
           <article className="way-card" key={item.name}>
-            <div className="way-card-top"><span className="way-index">0{index + 1}</span><span className="way-icon"><FeatureIcon type={item.icon} /></span></div>
-            <h3>{item.name}</h3>
-            <p>{item.copy}</p>
+            <div className="way-image"><img src={item.image} alt={item.alt} /></div>
+            <div className="way-card-content">
+              <span className="way-index">0{index + 1} / {item.name}</span>
+              <h3>{item.name}</h3>
+              <p>{item.copy}</p>
+            </div>
           </article>
         ))}
       </div>
@@ -422,7 +437,8 @@ function RecognitionSection() {
         <div className="recognition-grid">
           {recognitions.map((item) => (
             <article className="recognition-card" key={item.index}>
-              <div className="recognition-card-top"><span>{item.index}</span><span className="recognition-icon"><FeatureIcon type={item.icon} /></span></div>
+              <div className="recognition-image"><img src={item.image} alt={item.alt} /></div>
+              <div className="recognition-card-top"><span>{item.index}</span></div>
               <h3>{item.label}</h3>
               <p>{item.detail}</p>
             </article>
@@ -456,8 +472,7 @@ function ContactSection() {
         <div className="office-grid">
           {offices.map((office, index) => (
             <article className="office-card" key={office.city}>
-              <div className="office-card-top"><span className="office-index">0{index + 1} / {office.city.toUpperCase()}</span><span className="office-icon"><FeatureIcon type="location" /></span></div>
-              <h3>{office.place}</h3>
+              <div className="office-heading"><span className="office-icon"><FeatureIcon type="location" /></span><div><span className="office-index">0{index + 1} / {office.city.toUpperCase()}</span><h3>{office.place}</h3></div></div>
               <p>{office.address}</p>
             </article>
           ))}

@@ -273,25 +273,27 @@ h1, h2, h3, p, figure { margin-top: 0; }
 
 .way-section { padding: 108px 0 112px; }
 .way-section .section-heading-content h2 { max-width: 720px; }
-.way-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 58px; }
-.way-card { min-height: 238px; padding: 31px 26px 0 0; border-top: 1px solid #aeb8c2; }
-.way-card-top { flex-direction: column; gap: 13px; margin-bottom: 27px; }
-.way-index { display: block; margin-bottom: 0; color: #718094; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
-.way-icon { width: 58px; height: 58px; color: #3c8ba5; order: -1; }
-.way-icon .feature-icon { width: 36px; height: 36px; }
+.way-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 58px; }
+.way-card { min-width: 0; overflow: hidden; background: var(--off-white); }
+.way-image { height: 190px; overflow: hidden; background: #e1e7ea; }
+.way-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.75,.25,1); }
+.way-card:hover .way-image img { transform: scale(1.04); }
+.way-card-content { min-height: 235px; padding: 24px 25px 29px; }
+.way-index { display: block; margin-bottom: 24px; color: #718094; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
 .way-card h3 { margin: 0 0 14px; color: var(--navy); font-family: var(--space); font-size: 22px; letter-spacing: .04em; }
 .way-card p { max-width: 370px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
 
 .recognition-section { padding: 86px 0 96px; background: #f5f6f7; }
 .recognition-section .section-heading-content h2 { max-width: 680px; font-size: clamp(34px, 4vw, 50px); }
-.recognition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 47px; border: 1px solid var(--line); background: var(--line); }
-.recognition-card { min-height: 215px; padding: 31px 29px; background: #fff; }
-.recognition-card-top { flex-direction: column; gap: 13px; margin-bottom: 27px; }
+.recognition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 47px; }
+.recognition-card { min-width: 0; min-height: 345px; padding: 0 0 27px; background: #fff; }
+.recognition-image { height: 170px; overflow: hidden; background: #e1e7ea; }
+.recognition-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.75,.25,1); }
+.recognition-card:hover .recognition-image img { transform: scale(1.04); }
+.recognition-card-top { margin: 23px 25px 15px; }
 .recognition-card-top > span:first-child { display: block; color: #728197; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
-.recognition-icon { width: 58px; height: 58px; color: #3c8ba5; order: -1; }
-.recognition-icon .feature-icon { width: 36px; height: 36px; }
-.recognition-card h3 { margin: 0 0 10px; color: var(--navy); font-family: var(--space); font-size: 20px; font-weight: 600; letter-spacing: -.03em; }
-.recognition-card p { max-width: 300px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.recognition-card h3 { margin: 0 25px 10px; color: var(--navy); font-family: var(--space); font-size: 20px; font-weight: 600; letter-spacing: -.03em; }
+.recognition-card p { max-width: 300px; margin: 0 25px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 
 .contact-section { padding: 0 0 88px; color: #fff; background: var(--navy); }
 .contact-cta { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(270px, .8fr); align-items: center; gap: 52px; padding-top: 80px; padding-bottom: 78px; border-bottom: 1px solid rgb(255 255 255 / 22%); }
@@ -309,9 +311,9 @@ h1, h2, h3, p, figure { margin-top: 0; }
 .offices-heading h2 { color: #fff; font-size: clamp(30px, 4vw, 48px); }
 .office-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgb(255 255 255 / 22%); border: 1px solid rgb(255 255 255 / 22%); }
 .office-card { min-height: 210px; padding: 29px 27px; background: var(--navy); }
-.office-card-top { flex-direction: column; gap: 12px; margin-bottom: 23px; }
+.office-heading { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
 .office-index { display: block; margin-bottom: 0; color: #bdcbd9; font-size: 9px; font-weight: 700; letter-spacing: .11em; }
-.office-icon { width: 54px; height: 54px; color: #8ed1e4; order: -1; }
+.office-icon { width: 39px; height: 39px; color: #8ed1e4; }
 .office-icon .feature-icon { width: 32px; height: 32px; }
 .office-card h3 { margin: 0 0 9px; color: #fff; font-family: var(--space); font-size: 21px; font-weight: 500; letter-spacing: -.03em; }
 .office-card p { max-width: 340px; margin: 0; color: #d5dde5; font-size: 11px; line-height: 1.7; }
@@ -338,6 +340,11 @@ h1, h2, h3, p, figure { margin-top: 0; }
   .about-image-frame, .about-image-frame img { min-height: 290px; height: 290px; }
   .mission-card, .vision-card { padding: 30px 28px; }
   .contact-cta { gap: 32px; }
+  .way-grid { gap: 16px; }
+  .way-image { height: 165px; }
+  .way-card-content { min-height: 220px; padding: 21px 21px 25px; }
+  .recognition-grid { gap: 16px; }
+  .recognition-image { height: 145px; }
   .footer-main { grid-template-columns: 160px 1fr; gap: 23px 30px; }
   .footer-brand { width: 155px; }
   .footer-links { grid-column: 2; }
@@ -385,14 +392,20 @@ h1, h2, h3, p, figure { margin-top: 0; }
   .mission-card, .vision-card { min-height: 0; padding: 26px 22px; }
   .mission-card h3, .vision-card h3 { font-size: 28px; }
   .mission-card ul { font-size: 11px; }
-  .way-grid { grid-template-columns: 1fr; gap: 22px; margin-top: 35px; }
-  .way-card { min-height: 0; padding: 18px 0 0; }
+  .way-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 35px; }
+  .way-card { min-height: 0; padding: 0; }
+  .way-image { height: 185px; }
+  .way-card-content { min-height: 0; padding: 21px 19px 25px; }
   .way-card-top { margin-bottom: 18px; }
+  .way-index { margin-bottom: 15px; }
   .way-card p { font-size: 12px; }
   .recognition-section { padding: 64px 0 69px; }
-  .recognition-grid { grid-template-columns: 1fr; margin-top: 28px; }
-  .recognition-card { min-height: 0; padding: 19px 20px 22px; }
-  .recognition-card > span { margin-bottom: 19px; }
+  .recognition-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+  .recognition-card { min-height: 0; padding: 0 0 22px; }
+  .recognition-image { height: 165px; }
+  .recognition-card-top { margin: 18px 19px 12px; }
+  .recognition-card h3 { margin-right: 19px; margin-left: 19px; }
+  .recognition-card p { margin-right: 19px; margin-left: 19px; }
   .contact-section { padding-bottom: 57px; }
   .contact-cta { grid-template-columns: 1fr; gap: 26px; padding-top: 60px; padding-bottom: 50px; }
   .contact-cta h2 { font-size: clamp(39px, 10.4vw, 52px); }
