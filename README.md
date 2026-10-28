@@ -76,6 +76,12 @@ git push -u origin main
 
 After the push, open the repository's **Actions** tab to see the build and deployment run. Future pushes to `main` will repeat the same process automatically.
 
+## Cloudflare native Git integration
+
+Instead of GitHub Actions, connect the repository directly to Workers Builds. In the Cloudflare dashboard, open **Workers & Pages → your Worker → Settings → Builds → Connect**, authorize the GitHub account, and select the repository. Set the production branch to `main`, the build command to `npm run build`, and the deploy command to `npx wrangler deploy`. Workers Builds installs dependencies from `package-lock.json`, builds `dist/`, and deploys the Worker on every push to `main`. Leave the preview command as `npx wrangler preview` if branch previews are desired.
+
+This native path is useful when the GitHub installation is not permitted to create files under `.github/workflows/`; it does not require Cloudflare API secrets in GitHub because Workers Builds manages its own deployment authorization.
+
 ## Useful commands
 
 ```bash
@@ -91,3 +97,5 @@ npm run deploy    # Build and deploy with Wrangler
 - [Static Assets bindings](https://developers.cloudflare.com/workers/static-assets/binding/)
 - [Single-page application routing](https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/)
 - [GitHub Actions for Workers](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)
+- [Workers Builds GitHub integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/)
+- [Workers Builds configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)
